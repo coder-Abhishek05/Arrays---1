@@ -1,0 +1,140 @@
+Q1-------------------------------------->
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n1;
+    cout << "Enter the no. of element entered : ";
+    cin >> n1;
+    int arr[n1];
+    for (int i=0 ; i< n1 ; i++){
+        cin>>arr[i] ;
+    }
+    int pro = 1 ;
+    for (int i=0 ; i< n1 ; i++){
+        pro *= arr[i] ;
+    }
+    cout << "Product of the all element : "<< pro ;
+    
+}
+
+Q2----------------------------------------------->
+
+
+#include <iostream>
+#include <climits>
+using namespace std;
+
+int main(){
+    int n1;
+    cout << "Enter the no. of element entered : ";
+    cin >> n1;
+    int arr[n1];
+    for (int i=0 ; i< n1 ; i++){
+        cout << "Enter element : ";
+        cin >> arr[i] ;
+    }
+    int min = INT_MIN ;
+    int sec = -1 ;
+    int flag =0;
+    for (int i=0 ; i< n1 ; i++){
+        if (arr[i] > min ){
+            sec = min ;
+            min = arr[i];
+            flag = 1;
+        }
+    }
+    cout << "Second largest element : " << sec <<endl ;
+    cout << "First largest element : " << min ;
+    
+}
+
+
+Q3--------------------------------------------->
+
+#include <iostream>
+#include <climits>
+using namespace std;
+
+int main(){
+    int n1;
+    cout << "Enter the no. of element entered : ";
+    cin >> n1;
+    int arr[n1];
+    for (int i=0 ; i< n1 ; i++){
+        cin>>arr[i] ;
+    }
+    int max = INT_MAX ;
+    for (int i=0 ; i< n1 ; i++){
+        if (max > arr[i]){
+            max = arr[i];
+        }
+    }
+    cout << "The minimum element is : "<< max ;
+}
+
+Q4------------------------------------------------------->
+
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int n1;
+    cout << "Enter the no. of element entered : ";
+    cin >> n1;
+    int arr[n1];
+    for (int i=0 ; i< n1 ; i++){
+        cin>>arr[i] ;
+    }
+    int flag =0 ;
+    for (int i=0 ; i<n1 ; i++){
+        for (int j=i ; j < n1 ; j++){
+            if (arr[i] == arr[j]){
+                flag = 1;
+                cout << arr[i] ;
+                break;
+            }
+        }
+        if (flag == 1){
+            break;
+        }
+    }
+}
+
+
+Q5----------------------------------------------------------->
+
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int find_smallest_missing(vector<int>& arr) {
+    int n = arr.size();
+    int left = 0;
+    int right = n - 1;
+
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (arr[mid] == mid + 1) {
+            left = mid + 1;
+        } else {
+            right = mid - 1;
+        }
+    }
+    return left + 1;
+}
+
+int main() {
+    vector<int> arr = {1, 2, 3, 4, 5, 7, 8, 9, 10};
+    cout << "Smallest missing positive element: " << find_smallest_missing(arr) << endl;
+    return 0;
+}
+
+
+Q6---------------------------------------------------->
+
+49
